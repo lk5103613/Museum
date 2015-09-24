@@ -1,0 +1,12 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="android:Theme.Light">
+         <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="full_screen">
+        <item name="android:background">@drawable/page_view_bg</item>
+    </style>
+
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#ffffff</color>
+    <color name="sliding_item_bg_color">#f3f3f3</color>
+    <color name="details_text_color">#d82721</color>
+    <color name="favorite_text_color">#a1a1a1</color>
+    <color name="name_text_color">#010101</color>
+    <color name="toolbar_bg_color">#F8F8F8</color>
+    <color name="toolbar_divider_color">#CBCBCB</color>
+    <color name="bottom_menu_color">#F3F3F3</color>
+    <color name="toolbar_text_color">#C5AC6B</color>
+    <color name="like_text_color">#ff5500</color>
+    <color name="intro_text">#EAD9A1</color>
+    <color name="jinian_bg">#e0CBCBCB</color>
+
+    <color name="goods_detail_sm_icon_text_color">#C9BB94</color>
+</resources>

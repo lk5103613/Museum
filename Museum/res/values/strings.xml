@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">MapPath</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_welcome">上海博物馆</string>
+    <string name="title_activity_intro_page">IntroPageActivity</string>
+    <string name="title_activity_guide">GuideActivity</string>
+    <string name="details">详情>></string>
+    <string name="title_activity_dote_map">DoteMapActivity</string>
+    <string name="draw_dote">画虚线</string>
+    <string name="bottom_menu">底部动画</string>
+    <string name="title_activity_bottom_animate">BottomAnimateActivity</string>
+
+    <string name="recommend_path">推荐路线</string>
+    <string name="my_location">我的位置</string>
+    <string name="common_device">公共设施</string>
+    <string name="title_activity_show_detail">ShowDetailActivity</string>
+    <string name="title_activity_goods_detail">GoodsDetailActivity</string>
+    <string name="title_activity_jie_shuo">JieShuoActivity</string>
+    <string name="title_activity_recommend_path">RecommendPathActivity</string>
+    <string name="title_activity_ji_nian_pin">JiNianPinActivity</string>
+    <string name="title_activity_share">ShareActivity</string>
+    <string name="title_activity_study_room">StudyRoomActivity</string>
+    <string name="title_activity_sitting_room">SittingRoomActivity</string>
+    <string name="title_activity_video">VideoActivity</string>
+    <string name="title_activity_goods_description">GoodsDescriptionActivity</string>
+    
+    <string name="xijie">细节</string>
+    <string name="sunmao">榫卯</string>
+    <string name="wenhua">文化</string>
+    
+</resources>

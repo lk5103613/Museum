@@ -1,0 +1,46 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="com.like.mappath.ShowDetailActivity">
+    
+
+    <RelativeLayout
+        android:id="@+id/tip_container"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:background="@color/bottom_menu_color"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/menu_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:drawableLeft="@drawable/wc"
+            android:drawablePadding="20dp"
+            android:gravity="center"
+            android:text="视屏太模糊我看不清这里写的是什么"/>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:clickable="true"
+            android:onClick="back"
+            android:src="@drawable/info"/>
+
+    </RelativeLayout>
+    
+    <ImageView
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:layout_above="@id/tip_container"/>
+
+</RelativeLayout>

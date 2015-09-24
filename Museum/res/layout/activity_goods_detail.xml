@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<LinearLayout
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/m_bg"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingTop="40dip" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+
+
+
+        <LinearLayout
+            android:id="@+id/goods_detail_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/like_count"
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginRight="20dp"
+                    android:textSize="10dp"
+                    android:gravity="center"
+                    android:drawableTop="@drawable/m_icon_04"
+                    android:textColor="@color/like_text_color" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/sm_img_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dip"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:layout_above="@id/goods_detail_bottom"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!--<ImageView-->
+                <!--android:id="@+id/imageview1"-->
+                <!--android:layout_width="40dp"-->
+                <!--android:layout_height="40dp"-->
+                <!--android:layout_alignParentLeft="true"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:clickable="true"-->
+                <!--android:onClick="back"-->
+                <!--android:layout_marginLeft="16dp"-->
+                <!--android:src="@drawable/icon_back" />-->
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/m_icon_11"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#bd9b6d"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dip"
+                android:text="清(1640-1720)花梨木"
+                android:textColor="#ac8f67"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="3dip"
+                android:text="高86.2厘米，长126.2厘米"
+                android:textColor="#ac8f67"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="3dip"
+                android:text="宽39.7厘米"
+                android:textColor="#ac8f67"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="3dip"
+                android:text="该案面心用铁和木"
+                android:textColor="#ac8f67"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="3dip"
+                android:text="通体我素圆润，牙条与牙头用材厚实。"
+                android:textColor="#ac8f67"
+                android:textSize="12sp" />
+
+            <com.shmuseum.customeview.MyViewPager
+                android:id="@+id/dialog_view_pager"
+                android:layout_width="match_parent"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp">
+            </com.shmuseum.customeview.MyViewPager>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dip"
+        android:background="#f3f3f3"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/locLL"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/locIv"
+                android:layout_width="20dip"
+                android:layout_height="25dip"
+                android:scaleType="fitXY"
+                android:src="@drawable/m_icon_05" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/videoLL"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:onClick="toVideo"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/videoIv"
+                android:layout_width="20dip"
+                android:layout_height="25dip"
+                android:scaleType="fitXY"
+                android:src="@drawable/m_icon_09" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/jieshuoLL"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:onClick="toJieShuo"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/jieshuoIv"
+                android:layout_width="20dip"
+                android:layout_height="25dip"
+                android:scaleType="fitXY"
+                android:src="@drawable/m_icon_08" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/shareLL"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:onClick="toShare"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/shareIv"
+                android:layout_width="20dip"
+                android:layout_height="25dip"
+                android:scaleType="fitXY"
+                android:src="@drawable/m_icon_06" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/jinianpingLL"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="toJiNianPin"
+            android:gravity="center" >
+
+            <ImageView
+                android:id="@+id/jinianpingIv"
+                android:layout_width="20dip"
+                android:layout_height="25dip"
+                android:scaleType="fitXY"
+                android:src="@drawable/m_icon_07" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>
+
+<com.shmuseum.customeview.ShareView
+    android:id="@+id/share_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="invisible"/>
+</RelativeLayout>

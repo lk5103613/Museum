@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:background="@drawable/sliding_item_bg">
+
+    <ImageView
+        android:id="@+id/item_img"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"/>
+
+    <LinearLayout
+        android:id="@+id/item_des"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/item_img"
+        android:layout_marginLeft="10dp">
+
+        <TextView
+            android:id="@+id/item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:textColor="@color/name_text_color"
+            android:layout_marginBottom="5dp"
+            android:text="test" />
+        <TextView
+            android:id="@+id/item_fav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/favorite_text_color"
+            android:text="已有50人点赞"
+            android:drawablePadding="10dp"
+            android:drawableLeft="@drawable/favorite"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/details"
+        android:textColor="@color/details_text_color"
+        android:textSize="17dp"
+        android:layout_marginBottom="5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"/>
+
+
+</RelativeLayout>

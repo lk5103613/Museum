@@ -1,0 +1,93 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clipChildren="false"
+    tools:context="com.shmuseum.musesum.StudyRoomActivity" >
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/toolbar_bg_color" >
+
+        <!-- <ImageView -->
+        <!-- android:layout_width="40dp" -->
+        <!-- android:layout_height="40dp" -->
+        <!-- android:layout_alignParentLeft="true" -->
+        <!-- android:layout_centerVertical="true" -->
+        <!-- android:layout_marginLeft="20dip" -->
+        <!-- android:clickable="true" -->
+        <!-- android:onClick="back" -->
+        <!-- android:src="@drawable/icon_back" /> -->
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="中国明清家具馆"
+            android:textColor="@color/toolbar_text_color" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/toolbar_divider_color" />
+    </RelativeLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/sliding_view_pager"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+         />
+    <!-- android:clipChildren="false" -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/sliding_view_pager"
+        android:layout_below="@id/toolbar" 
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="20dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" 
+                android:layout_marginBottom="20dp">
+
+                <LinearLayout
+                    android:id="@+id/study_room_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp" >
+
+                    <com.shmuseum.customeview.DoteView
+                        android:id="@+id/study_room_map"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/study_room" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:text="书房是文人生活中最重要的活动场所，通常位于庭院之中，窗外青松翠柏，修竹摇曳，是文人吟诗作画灵感的来源。在书房里，文人或苦读四书五经，或与二三知己吟诗作对，赏玩自己的珍藏。书房居中有一个放置着文房四宝的大书桌，书桌对面靠墙桌上的乐器自然也是文人的嗜好之物，橱柜则是文人用来收藏字画、古玩、古籍的。古代的书房也能兼做卧室，置放着卧榻、衣架，墙边有洗脸盆架，左边靠墙有一件黄花梨木橱等家具。"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</RelativeLayout>
