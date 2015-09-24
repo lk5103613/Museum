@@ -1,4 +1,4 @@
-package com.shmuseum.musesum;
+package com.shmuseum.fragment;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -7,17 +7,18 @@ import java.util.List;
 import org.json.JSONArray;
 
 import uk.co.senab.photoview.PhotoViewAttacher;
-import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,11 +34,13 @@ import com.shmuseum.adapter.SlidingPagerAdapter;
 import com.shmuseum.customeview.DoteView;
 import com.shmuseum.entity.ItemEntity;
 import com.shmuseum.entity.MapPoint;
+import com.shmuseum.musesum.GoodsDetailActivity;
+import com.shmuseum.musesum.R;
 import com.shmuseum.network.APIS;
 import com.shmuseum.network.GsonUtil;
 import com.shmuseum.network.MyNetworkUtil;
 
-public class RecommendPathActivity extends Activity {
+public class RecommendPathFragment extends Fragment {
 	private DoteView doteView;
 	private Handler mHandler;
 	private ValueAnimator valueAnimator;
@@ -49,13 +52,21 @@ public class RecommendPathActivity extends Activity {
 	private List<MapPoint> photoPoints;
 	private List<ItemEntity> entities;
 	SlidingPagerAdapter mAdapter =  null;
-
+	private Context mContext;
+	
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_recommend_path);
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		mContext = getActivity();
+		View view = inflater.inflate(R.layout.fragment_recommend_path, container,false);
+		initView(view);
+		
+		return view;
+	}
 
-		mSlidingPager = (ViewPager) findViewById(R.id.sliding_view_pager);
+	public void initView(View view){
+
+		mSlidingPager = (ViewPager) view.findViewById(R.id.sliding_view_pager);
 		mSlidingPager.setPageMargin(30);
 		mSlidingPager.setOffscreenPageLimit(3);
 
@@ -78,14 +89,15 @@ public class RecommendPathActivity extends Activity {
 				});
 
 		mHandler = new Handler();
-		mInflater = LayoutInflater.from(this);
-		doteView = (DoteView) findViewById(R.id.dote_view);
+		mInflater = LayoutInflater.from(mContext);
+		doteView = (DoteView) view.findViewById(R.id.dote_view);
 		doteView.setVisibility(View.INVISIBLE);
 		doteView.setMarkerResourceId(R.drawable.marker2);
 		doteView.setRedMarkerResourceId(R.drawable.marker2_selected);
 		doteView.setOnPhotoTapListener(new PhotoViewAttacher.OnPhotoTapListener() {
 			@Override
 			public void onPhotoTap(View view, float x, float y) {
+				System.out.println("tap " + x + " " + y);
 				int i = 0;
 				for (MapPoint mp : photoPoints) {
 					float minMpX = mp.x - 0.04f;
@@ -94,9 +106,9 @@ public class RecommendPathActivity extends Activity {
 					float maxMpY = mp.y + 0.1f;
 					if ((x >= minMpX && x <= maxMpX)
 							&& (y >= minMpY && y <= maxMpY)) {
-						Intent intent = new Intent(RecommendPathActivity.this,
+						Intent intent = new Intent(mContext,
 								GoodsDetailActivity.class);
-						intent.putExtra(GuideActivity.ICON_INDEX, i + 1);
+						intent.putExtra(GuideFragment.ICON_INDEX, i + 1);
 						startActivity(intent);
 						break;
 					}
@@ -108,10 +120,9 @@ public class RecommendPathActivity extends Activity {
 		initDrawAnimation();
 
 	}
-
+	
 	@Override
-	protected void onResume() {
-		super.onResume();
+	public void onResume() {
 		fetchData(new Response.Listener<JSONArray>() {
 			@Override
 			public void onResponse(JSONArray response) {
@@ -122,10 +133,11 @@ public class RecommendPathActivity extends Activity {
 		}, new Response.ErrorListener() {
 			@Override
 			public void onErrorResponse(VolleyError error) {
-				Toast.makeText(RecommendPathActivity.this, "请检查网络",
+				Toast.makeText(mContext, "请检查网络",
 						Toast.LENGTH_LONG).show();
 			}
 		});
+		super.onResume();
 	}
 
 	public void drawMarkers() {
@@ -159,7 +171,7 @@ public class RecommendPathActivity extends Activity {
 			Response.ErrorListener errorListener) {
 		JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET,
 				APIS.FIND_ALL, null, listener, errorListener);
-		MyNetworkUtil.getInstance(getApplicationContext()).addToRequstQueue(
+		MyNetworkUtil.getInstance(mContext).addToRequstQueue(
 				request);
 	}
 
@@ -174,7 +186,7 @@ public class RecommendPathActivity extends Activity {
 			txtFavorite.setText("已有" + entity.zan_cnt + "人点赞");
 			String iconUrl = APIS.BASE_URL + entity.icon;
 			MyNetworkUtil
-					.getInstance(getApplicationContext())
+					.getInstance(mContext)
 					.getImageLoader()
 					.get(iconUrl,
 							ImageLoader.getImageListener(img, R.color.white,
@@ -182,7 +194,7 @@ public class RecommendPathActivity extends Activity {
 			views.add(view);
 		}
 		if(mAdapter == null) {
-			mAdapter = new SlidingPagerAdapter(RecommendPathActivity.this, views);
+			mAdapter = new SlidingPagerAdapter(mContext, views);
 			mSlidingPager.setAdapter(mAdapter);
 			doteView.setCurrentId(entities.get(0).exhibitId);
 		}
@@ -348,6 +360,5 @@ public class RecommendPathActivity extends Activity {
 	}
 
 	public void back(View v) {
-		this.finish();
 	}
 }

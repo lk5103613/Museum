@@ -33,7 +33,7 @@
             android:label="@string/title_activity_intro_page" >
         </activity>
         <activity
-            android:name=".GuideActivity"
+            android:name="com.shmuseum.fragment.GuideFragment"
             android:label="@string/title_activity_guide" >
         </activity>
         <activity
@@ -49,7 +49,7 @@
             android:label="@string/title_activity_jie_shuo" >
         </activity>
         <activity
-            android:name=".RecommendPathActivity"
+            android:name="com.shmuseum.fragment.RecommendPathFragment"
             android:label="@string/title_activity_recommend_path" >
         </activity>
         <activity
@@ -71,6 +71,10 @@
         <activity
             android:name=".GoodsDescriptionActivity"
             android:label="@string/title_activity_goods_description" >
+        </activity>
+          <activity
+            android:name="com.shmuseum.musesum.IndexActivity"
+            android:label="@string/title_activity_intro_page" >
         </activity>
     </application>
 

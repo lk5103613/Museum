@@ -1,5 +1,7 @@
 package com.shmuseum.musesum;
 
+import com.shmuseum.fragment.GuideFragment;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -28,27 +30,27 @@ public class ShowDetailActivity extends Activity {
         mapImg = (ImageView) findViewById(R.id.map);
 
         Intent intent = getIntent();
-        mMenuType = intent.getIntExtra(GuideActivity.MENU_TYPE, -1);
+        mMenuType = intent.getIntExtra(GuideFragment.MENU_TYPE, -1);
         setMenuType(mMenuType);
     }
 
     private void setMenuType(int type) {
         switch (type) {
-            case GuideActivity.MENU_EVELATOR:
+            case GuideFragment.MENU_EVELATOR:
                 setDrawableLeft(R.drawable.elevator);
                 mTxtMenuIndicator.setText("升降电梯-博物馆4楼北侧");
                 mapImg.setImageResource(R.drawable.map);
                 break;
-            case GuideActivity.MENU_GIFT:
+            case GuideFragment.MENU_GIFT:
                 setDrawableLeft(R.drawable.gift);
                 mapImg.setImageResource(R.drawable.map);
                 break;
-            case GuideActivity.MENU_TEA:
+            case GuideFragment.MENU_TEA:
                 setDrawableLeft(R.drawable.map);
                 mTxtMenuIndicator.setText("茶楼-博物馆2楼西侧");
                 mapImg.setImageResource(R.drawable.map);
                 break;
-            case GuideActivity.MENU_WC:
+            case GuideFragment.MENU_WC:
                 setDrawableLeft(R.drawable.wc);
                 mTxtMenuIndicator.setText("公共卫生间-博物馆4楼西侧");
                 mapImg.setImageResource(R.drawable.map);

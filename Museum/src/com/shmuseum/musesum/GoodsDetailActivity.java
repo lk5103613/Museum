@@ -30,6 +30,7 @@ import com.shmuseum.customeview.FullScreenDialog;
 import com.shmuseum.customeview.MyViewPager;
 import com.shmuseum.customeview.ShareView;
 import com.shmuseum.entity.Goods;
+import com.shmuseum.fragment.GuideFragment;
 import com.shmuseum.network.APIS;
 import com.shmuseum.network.GsonUtil;
 import com.shmuseum.network.MyNetworkUtil;
@@ -74,7 +75,7 @@ public class GoodsDetailActivity extends Activity {
         mShareView = (ShareView)findViewById(R.id.share_view);
         container = (LinearLayout) findViewById(R.id.container);
 
-        mIconIndex = getIntent().getIntExtra(GuideActivity.ICON_INDEX, -1);
+        mIconIndex = getIntent().getIntExtra(GuideFragment.ICON_INDEX, -1);
         if(mIconIndex != -1) {
             fetchData(new Response.Listener<JSONObject>() {
                 @Override

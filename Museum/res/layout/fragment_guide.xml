@@ -1,0 +1,148 @@
+<com.shmuseum.customeview.FoldingLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.like.mappath.BottomAnimateActivity" >
+
+        <RelativeLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/toolbar_bg_color" >
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="中国明清家具馆"
+                android:textColor="@color/toolbar_text_color" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/toolbar_divider_color" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/bottom_menu"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/bottom_menu_color"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/show_path"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/path"
+                android:gravity="center"
+                android:text="@string/recommend_path"
+                android:textColor="@color/toolbar_text_color" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/location"
+                android:gravity="center"
+                android:text="@string/my_location"
+                android:textColor="@color/toolbar_text_color" />
+
+            <TextView
+                android:id="@+id/btn_show_bottom"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/info"
+                android:gravity="center"
+                android:text="@string/common_device"
+                android:textColor="@color/toolbar_text_color" />
+        </LinearLayout>
+
+        <com.shmuseum.customeview.DoteView
+            android:id="@+id/dote_view_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/bottom_menu"
+            android:layout_below="@id/toolbar"
+            android:layout_centerHorizontal="true"
+            android:adjustViewBounds="true"
+            android:background="#f9f8f3"
+            android:src="@drawable/map3" />
+
+        <LinearLayout
+            android:id="@+id/slide_up_menu"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/bottom_menu_color"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <LinearLayout
+                android:id="@+id/menu_tea"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/tea" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/menu_gift"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/gift" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/menu_wc"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/wc" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/menu_elevator"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/elevator" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</com.shmuseum.customeview.FoldingLayout>

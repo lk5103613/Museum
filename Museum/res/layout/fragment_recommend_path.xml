@@ -1,0 +1,64 @@
+<com.shmuseum.customeview.FoldingLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        tools:context=".MainActivity" >
+
+        <com.shmuseum.customeview.DoteView
+            android:id="@+id/dote_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:adjustViewBounds="true"
+            android:background="#f9f8f3"
+            android:src="@drawable/map3" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/sliding_view_pager"
+            android:layout_width="300dp"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="5dp" />
+
+        <!-- toolbar -->
+
+        <RelativeLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/toolbar_bg_color" >
+
+            <!-- <ImageView -->
+            <!-- android:layout_width="40dp" -->
+            <!-- android:layout_height="40dp" -->
+            <!-- android:layout_alignParentLeft="true" -->
+            <!-- android:layout_centerVertical="true" -->
+            <!-- android:layout_marginLeft="20dip" -->
+            <!-- android:clickable="true" -->
+            <!-- android:onClick="back" -->
+            <!-- android:src="@drawable/icon_back" /> -->
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="中国明清家具馆"
+                android:textColor="@color/toolbar_text_color" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/toolbar_divider_color" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</com.shmuseum.customeview.FoldingLayout>

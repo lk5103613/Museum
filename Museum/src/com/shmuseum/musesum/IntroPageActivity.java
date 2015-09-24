@@ -1,5 +1,7 @@
 package com.shmuseum.musesum;
 
+import com.shmuseum.fragment.GuideFragment;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -19,7 +21,7 @@ public class IntroPageActivity extends Activity {
     }
 
     public void toGuide(View v) {
-        Intent intent = new Intent(mContext, GuideActivity.class);
+        Intent intent = new Intent(mContext, IndexActivity.class);
         startActivity(intent);
     }
 
