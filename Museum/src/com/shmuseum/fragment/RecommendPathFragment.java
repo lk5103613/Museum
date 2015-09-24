@@ -141,8 +141,8 @@ public class RecommendPathFragment extends Fragment {
 	}
 
 	public void drawMarkers() {
-		markers = new ArrayList<>();
-		photoPoints = new ArrayList<>();
+		markers = new ArrayList<MapPoint>();
+		photoPoints = new ArrayList<MapPoint>();
 		MapPoint mp1 = new MapPoint(0.5624f, 0.1966f);
         MapPoint mp2 = new MapPoint(0.52297f, 0.3118f);
         MapPoint mp3 = new MapPoint(0.758f, 0.3813961f);
@@ -176,7 +176,7 @@ public class RecommendPathFragment extends Fragment {
 	}
 
 	private void initItemView(List<ItemEntity> entities) {
-		views = new ArrayList<>();
+		views = new ArrayList<View>();
 		for (ItemEntity entity : entities) {
 			View view = mInflater.inflate(R.layout.sliding_item, null);
 			ImageView img = (ImageView) view.findViewById(R.id.item_img);

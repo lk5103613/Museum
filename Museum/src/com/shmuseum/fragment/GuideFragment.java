@@ -167,8 +167,8 @@ public class GuideFragment extends Fragment implements View.OnClickListener {
 	}
 
 	public void drawMarkers() {
-		markers = new ArrayList<>();
-		photoPoints = new ArrayList<>();
+		markers = new ArrayList<MapPoint>();
+		photoPoints = new ArrayList<MapPoint>();
 
 		// 裁剪之后
 		MapPoint mp1 = new MapPoint(0.5624f, 0.1966f);
@@ -197,12 +197,12 @@ public class GuideFragment extends Fragment implements View.OnClickListener {
 	}
 
 	public void drawBiggers() {
-		biggerPoints = new ArrayList<>();
+		biggerPoints = new ArrayList<MapPoint>();
 		MapPoint mp1 = new MapPoint(0.5589668f, 0.12810344f);
 		MapPoint mp2 = new MapPoint(0.5051194f, 0.54216376f);
 		biggerPoints.add(mp1);
 		biggerPoints.add(mp2);
-		biggers = new ArrayList<>();
+		biggers = new ArrayList<MapPoint>();
 		for (int i = 0; i < biggerPoints.size(); i++) {
 			MapPoint biggerMp = new MapPoint(doteView.canvasWidth
 					* biggerPoints.get(i).x, doteView.canvasHeight

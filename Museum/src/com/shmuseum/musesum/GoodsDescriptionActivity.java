@@ -57,7 +57,7 @@ public class GoodsDescriptionActivity extends Activity {
     }
 
     private void initDataSource(){
-        goods = new ArrayList<>();
+        goods = new ArrayList<GoodInfo>();
         goods.add(new GoodInfo(R.drawable.goods_description, "榫卯", "        中国家具把各个部件连接起来的\"榫卯\"做法是家具制造的主要结构方式。各种榫卯做法不同，应用范围不同，但他们在每件家具上都具有形体结构的\"关节\"作用。\r\n        若榫卯使用得当，两块木结构之间就能严密扣合，达到\"天衣无缝\"的成图。它是古代木匠必须具备的基本技能，工匠手艺的高低，通过榫卯的结构就能清楚的反映出来。"));
 
         adapter = new GoodsDescriptionAdapter(this, goods);
