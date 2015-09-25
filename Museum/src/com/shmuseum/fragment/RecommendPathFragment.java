@@ -53,6 +53,7 @@ public class RecommendPathFragment extends Fragment {
 	private List<ItemEntity> entities;
 	SlidingPagerAdapter mAdapter =  null;
 	private Context mContext;
+	private boolean mHasDrawed = false;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -115,13 +116,20 @@ public class RecommendPathFragment extends Fragment {
 				}
 			}
 		});
-
-
+//		initDrawAnimation();
+	}
+	
+	@Override
+	public void setUserVisibleHint(boolean isVisibleToUser) {
+		super.setUserVisibleHint(isVisibleToUser);
+		if(!mHasDrawed && isVisibleToUser) {
+			initDrawAnimation();
+			mHasDrawed = true;
+		}
 	}
 	
 	@Override
 	public void onResume() {
-		initDrawAnimation();
 		fetchData(new Response.Listener<JSONArray>() {
 			@Override
 			public void onResponse(JSONArray response) {
