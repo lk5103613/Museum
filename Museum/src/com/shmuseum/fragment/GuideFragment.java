@@ -252,7 +252,7 @@ public class GuideFragment extends Fragment implements View.OnClickListener {
 		case R.id.show_path:
 //			intent = new Intent(mContext, RecommendPathFragment.class);
 //			startActivity(intent);
-			mPagerListener.changePage(IndexActivity.FRAGMENT_RECOMMEND);
+			mPagerListener.changePage();
 			break;
 		default:
 			break;

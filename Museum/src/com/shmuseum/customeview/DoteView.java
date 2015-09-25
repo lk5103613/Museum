@@ -46,7 +46,6 @@ public class DoteView extends PhotoView {
     // 小人高
     private int MARKER_HEIGHT = 22;
 
-
 	private Paint mPaint;
 	private Path mPath;
 

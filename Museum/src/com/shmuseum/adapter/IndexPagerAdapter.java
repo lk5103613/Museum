@@ -5,14 +5,16 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.shmuseum.fragment.GuideFragment;
+import com.shmuseum.fragment.IndexFragment;
 import com.shmuseum.fragment.RecommendPathFragment;
 
 public class IndexPagerAdapter extends FragmentStatePagerAdapter{
 
+	private IndexFragment mIndex1 = new IndexFragment();
 	private GuideFragment mGuideFragment = new GuideFragment();
 	private RecommendPathFragment mRecommendPathFragment = new RecommendPathFragment();
 	
-	private Fragment[] mFragments = new Fragment[]{mGuideFragment,mRecommendPathFragment};
+	private Fragment[] mFragments = new Fragment[]{mIndex1, mGuideFragment,mRecommendPathFragment};
 	
 	public IndexPagerAdapter(FragmentManager fm) {
 		super(fm);
