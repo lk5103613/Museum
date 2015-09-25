@@ -4,36 +4,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 import uk.co.senab.photoview.PhotoViewAttacher;
-import android.annotation.TargetApi;
+import uk.co.senab.photoview.PhotoViewAttacher.OnPhotoTapListener;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
-import android.support.v4.widget.SimpleCursorAdapter.ViewBinder;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.RelativeLayout.LayoutParams;
+import android.widget.TextView;
 
 import com.nineoldandroids.animation.ObjectAnimator;
 import com.shmuseum.customeview.DoteView;
 import com.shmuseum.entity.MapPoint;
 import com.shmuseum.musesum.GoodsDetailActivity;
-import com.shmuseum.musesum.IndexActivity;
 import com.shmuseum.musesum.R;
 import com.shmuseum.musesum.ShowDetailActivity;
 import com.shmuseum.musesum.SittingRoomActivity;
 import com.shmuseum.musesum.StudyRoomActivity;
-import com.shmuseum.musesum.R.drawable;
-import com.shmuseum.musesum.R.id;
-import com.shmuseum.musesum.R.layout;
 import com.shmuseum.utils.DensityUtil;
 
 public class GuideFragment extends Fragment implements View.OnClickListener {
@@ -112,6 +105,12 @@ public class GuideFragment extends Fragment implements View.OnClickListener {
 				mHandler.postDelayed(new Runnable() {
 					@Override
 					public void run() {
+						doteView.setOnPhotoTapListener(new OnPhotoTapListener() {
+							@Override
+							public void onPhotoTap(View view, float x, float y) {
+								System.out.println(" x    " + x + "     y" + y);
+							}
+						});
 						doteView.setScale(DoteView.DEFAULT_SCALE, false);
 						doteView.setVisibility(View.VISIBLE);
 					}
@@ -169,19 +168,37 @@ public class GuideFragment extends Fragment implements View.OnClickListener {
 		photoPoints = new ArrayList<MapPoint>();
 
 		// 裁剪之后
-		MapPoint mp1 = new MapPoint(0.5624f, 0.1966f);
-		MapPoint mp2 = new MapPoint(0.52297f, 0.3118f);
-		MapPoint mp3 = new MapPoint(0.72f, 0.3803961f);
-		MapPoint mp5 = new MapPoint(0.694468f, 0.60937f);
-		MapPoint mp6 = new MapPoint(0.6448f, 0.7615f);
-		MapPoint mp7 = new MapPoint(0.2009f, 0.798f);
-
+		MapPoint mp1 = new MapPoint(0.43644f, 0.7016702f, 1);
+		MapPoint mp2 = new MapPoint(0.46812f, 0.200395f, 5);
+		MapPoint mp3 = new MapPoint(0.540316f, 0.208543f, 7);
+		MapPoint mp5 = new MapPoint(0.7015491f, 0.27355f, 13);
+		MapPoint mp6 = new MapPoint(0.70187f, 0.35099f, 16);
+		MapPoint mp7 = new MapPoint(0.70187f, 0.37627f, 17);
+		MapPoint mp8 = new MapPoint(0.70187f, 0.39627f, 18);
+		MapPoint mp9 = new MapPoint(0.595474f, 0.4523f, 20);
+		MapPoint mp10 = new MapPoint(0.192827f, 0.705442f, 28);
+		MapPoint mp11 = new MapPoint(0.192827f, 0.728f, 29);
+		MapPoint mp12 = new MapPoint(0.196128f, 0.762579f, 30);
+		MapPoint mp13 = new MapPoint(0.196128f, 0.796797f, 31);
+		MapPoint mp14 = new MapPoint(0.7645705f, 0.676895f, 40);
+		MapPoint mp15 = new MapPoint(0.61284f, 0.7782f, 38);
+		MapPoint mp16 = new MapPoint(0.6509665f, 0.6249648f, 41);
+		MapPoint mp17 = new MapPoint(0.6896772f, 0.60352486f, 44);
+		MapPoint mp18 = new MapPoint(0.2009f, 0.798f);
+		MapPoint mp19 = new MapPoint(0.2009f, 0.798f);
+		MapPoint mp20 = new MapPoint(0.2009f, 0.798f);
+		MapPoint mp21 = new MapPoint(0.2009f, 0.798f);
+		MapPoint mp22 = new MapPoint(0.2009f, 0.798f);
+		MapPoint mp23 = new MapPoint(0.2009f, 0.798f);
+		MapPoint mp24 = new MapPoint(0.2009f, 0.798f);
+		
 		photoPoints.add(mp1);
 		photoPoints.add(mp2);
 		photoPoints.add(mp3);
 		photoPoints.add(mp5);
 		photoPoints.add(mp6);
 		photoPoints.add(mp7);
+		photoPoints.add(mp8);
 
 		int i = 1;
 		for (MapPoint mp : photoPoints) {
