@@ -150,18 +150,65 @@ public class RecommendPathFragment extends Fragment {
 	public void drawMarkers() {
 		markers = new ArrayList<MapPoint>();
 		photoPoints = new ArrayList<MapPoint>();
-		MapPoint mp1 = new MapPoint(0.5624f, 0.1966f);
-        MapPoint mp2 = new MapPoint(0.52297f, 0.3118f);
-        MapPoint mp3 = new MapPoint(0.758f, 0.3813961f);
-        MapPoint mp4 = new MapPoint(0.699468f, 0.60937f);
-        MapPoint mp5 = new MapPoint(0.6658f, 0.7695f);
-        MapPoint mp6 = new MapPoint(0.1239f, 0.798f);
+		
+		MapPoint mp1 = new MapPoint(0.5104f, 0.302f, 1);
+		MapPoint mp2 = new MapPoint(0.50312f, 0.180395f, 5);
+		MapPoint mp3 = new MapPoint(0.565316f, 0.180543f, 7);
+		MapPoint mp4 = new MapPoint(0.7795491f, 0.26355f, 13);
+		
+		MapPoint mp5 = new MapPoint(0.775987f, 0.32099f, 16);
+		MapPoint mp6 = new MapPoint(0.775987f, 0.34627f, 17);
+		MapPoint mp7 = new MapPoint(0.775987f, 0.36627f, 18);
+		MapPoint mp8 = new MapPoint(0.625474f, 0.4313f, 20);
+		
+		MapPoint mp9 = new MapPoint(0.115827f, 0.680442f, 28);
+		MapPoint mp10 = new MapPoint(0.115827f, 0.703f, 29);
+		MapPoint mp11 = new MapPoint(0.149128f, 0.742579f, 30);
+		MapPoint mp12 = new MapPoint(0.149128f, 0.780797f, 31);
+		
+		MapPoint mp13 = new MapPoint(0.8295705f, 0.65495f, 40);
+		MapPoint mp14 = new MapPoint(0.66284f, 0.7582f, 38);
+		
+		MapPoint mp15 = new MapPoint(0.7000665f, 0.5989648f, 41);
+		MapPoint mp16 = new MapPoint(0.7326772f, 0.5849648f, 44);
+		
+		MapPoint mp17 = new MapPoint(0.5322556f, 0.0245f,51);
+		MapPoint mp18 = new MapPoint(0.72675f, 0.07418f,52);
+		MapPoint mp19 = new MapPoint(0.72675f, 0.118f,53);
+		MapPoint mp20 = new MapPoint(0.71789f, 0.15080f,54);
+		MapPoint mp21 = new MapPoint(0.579316f, 0.1390543f,59);
+		
+		MapPoint mp22 = new MapPoint(0.710385f, 0.530f,61);
+		MapPoint mp23 = new MapPoint(0.710385f, 0.496f,62);
+		MapPoint mp24 = new MapPoint(0.675385f, 0.550f,63);
+		
+		MapPoint mp25 = new MapPoint(0.5106f, 0.4799f,64);
+		
 		photoPoints.add(mp1);
 		photoPoints.add(mp2);
 		photoPoints.add(mp3);
 		photoPoints.add(mp4);
 		photoPoints.add(mp5);
 		photoPoints.add(mp6);
+		photoPoints.add(mp7);
+		photoPoints.add(mp8);
+		photoPoints.add(mp9);
+		photoPoints.add(mp10);
+		photoPoints.add(mp11);
+		photoPoints.add(mp12);
+		photoPoints.add(mp13);
+		photoPoints.add(mp14);
+		photoPoints.add(mp15);
+		photoPoints.add(mp16);
+		photoPoints.add(mp17);
+		photoPoints.add(mp18);
+		photoPoints.add(mp19);
+		photoPoints.add(mp20);
+		photoPoints.add(mp21);
+		photoPoints.add(mp22);
+		photoPoints.add(mp23);
+		photoPoints.add(mp24);
+		photoPoints.add(mp25);
 		int i = 1;
 		for (MapPoint mp : photoPoints) {
 			MapPoint newMp = new MapPoint(
