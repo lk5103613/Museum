@@ -97,7 +97,6 @@ public class RecommendPathFragment extends Fragment {
 		doteView.setOnPhotoTapListener(new PhotoViewAttacher.OnPhotoTapListener() {
 			@Override
 			public void onPhotoTap(View view, float x, float y) {
-				System.out.println("x   " + x + "    y" + y);
 				int i = 0;
 				for (MapPoint mp : photoPoints) {
 					float minMpX = mp.x - 0.04f;
@@ -133,7 +132,7 @@ public class RecommendPathFragment extends Fragment {
 		}, new Response.ErrorListener() {
 			@Override
 			public void onErrorResponse(VolleyError error) {
-				Toast.makeText(mContext, "请检查网络",
+				Toast.makeText(mContext, "璇锋鏌ョ綉缁�",
 						Toast.LENGTH_LONG).show();
 			}
 		});
@@ -149,52 +148,12 @@ public class RecommendPathFragment extends Fragment {
         MapPoint mp4 = new MapPoint(0.699468f, 0.60937f);
         MapPoint mp5 = new MapPoint(0.6658f, 0.7695f);
         MapPoint mp6 = new MapPoint(0.1239f, 0.798f);
-        
-        MapPoint mp7 = new MapPoint(0.1239f, 0.798f);
-        MapPoint mp8 = new MapPoint(0.1239f, 0.798f);
-        MapPoint mp9 = new MapPoint(0.1239f, 0.798f);
-        MapPoint mp10 = new MapPoint(0.1239f, 0.798f);
-        MapPoint mp11 = new MapPoint(0.1239f, 0.798f);
-        MapPoint mp12 = new MapPoint(0.1239f, 0.798f);
-        MapPoint mp13 = new MapPoint(0.1239f, 0.798f);
-        MapPoint mp14 = new MapPoint(0.1239f, 0.798f);
-        MapPoint mp15 = new MapPoint(0.1239f, 0.798f);
-        MapPoint mp16 = new MapPoint(0.1239f, 0.798f);
-        MapPoint mp17 = new MapPoint(0.1239f, 0.798f);
-        MapPoint mp18 = new MapPoint(0.1239f, 0.798f);
-        MapPoint mp19 = new MapPoint(0.1239f, 0.798f);
-        MapPoint mp20 = new MapPoint(0.1239f, 0.798f);
-        MapPoint mp21 = new MapPoint(0.1239f, 0.798f);
-        MapPoint mp22 = new MapPoint(0.1239f, 0.798f);
-        MapPoint mp23 = new MapPoint(0.1239f, 0.798f);
-        MapPoint mp24 = new MapPoint(0.1239f, 0.798f);
-        MapPoint mp25 = new MapPoint(0.1239f, 0.798f);
 		photoPoints.add(mp1);
 		photoPoints.add(mp2);
 		photoPoints.add(mp3);
 		photoPoints.add(mp4);
 		photoPoints.add(mp5);
 		photoPoints.add(mp6);
-		
-		photoPoints.add(mp7);
-		photoPoints.add(mp8);
-		photoPoints.add(mp9);
-		photoPoints.add(mp10);
-		photoPoints.add(mp11);
-		photoPoints.add(mp12);
-		photoPoints.add(mp13);
-		photoPoints.add(mp14);
-		photoPoints.add(mp15);
-		photoPoints.add(mp16);
-		photoPoints.add(mp17);
-		photoPoints.add(mp18);
-		photoPoints.add(mp19);
-		photoPoints.add(mp20);
-		photoPoints.add(mp21);
-		photoPoints.add(mp22);
-		photoPoints.add(mp23);
-		photoPoints.add(mp24);
-		photoPoints.add(mp25);
 		int i = 1;
 		for (MapPoint mp : photoPoints) {
 			MapPoint newMp = new MapPoint(
@@ -223,7 +182,7 @@ public class RecommendPathFragment extends Fragment {
 			TextView txtName = (TextView) view.findViewById(R.id.item_name);
 			TextView txtFavorite = (TextView) view.findViewById(R.id.item_fav);
 			txtName.setText(entity.name);
-			txtFavorite.setText("已有" + entity.zan_cnt + "人点赞");
+			txtFavorite.setText("宸叉湁" + entity.zan_cnt + "浜虹偣璧�");
 			String iconUrl = APIS.BASE_URL + entity.icon;
 			MyNetworkUtil
 					.getInstance(mContext)

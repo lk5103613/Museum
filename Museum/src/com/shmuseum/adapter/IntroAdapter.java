@@ -1,23 +1,14 @@
 package com.shmuseum.adapter;
 
+import java.util.List;
+
 import android.content.Context;
-import android.provider.Telephony;
-import android.text.Layout;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.shmuseum.entity.GoodInfo;
 import com.shmuseum.musesum.R;
-import com.shmuseum.utils.DensityUtil;
-import com.shmuseum.utils.DisplayUtil;
-
-import java.util.List;
-
-import javax.crypto.spec.DESKeySpec;
 
 public class IntroAdapter extends SimpleAdapter<GoodInfo> {
 
