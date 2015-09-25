@@ -97,7 +97,6 @@ public class RecommendPathFragment extends Fragment {
 		doteView.setOnPhotoTapListener(new PhotoViewAttacher.OnPhotoTapListener() {
 			@Override
 			public void onPhotoTap(View view, float x, float y) {
-				System.out.println("tap " + x + " " + y);
 				int i = 0;
 				for (MapPoint mp : photoPoints) {
 					float minMpX = mp.x - 0.04f;
@@ -117,12 +116,12 @@ public class RecommendPathFragment extends Fragment {
 			}
 		});
 
-		initDrawAnimation();
 
 	}
 	
 	@Override
 	public void onResume() {
+		initDrawAnimation();
 		fetchData(new Response.Listener<JSONArray>() {
 			@Override
 			public void onResponse(JSONArray response) {

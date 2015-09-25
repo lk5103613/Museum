@@ -122,8 +122,6 @@ public class GuideFragment extends Fragment implements View.OnClickListener {
 		doteView.setOnPhotoTapListener(new PhotoViewAttacher.OnPhotoTapListener() {
 			@Override
 			public void onPhotoTap(View view, float x, float y) {
-
-				System.out.println("x " + x + "  " + y);
 				int i = 0;
 				for (MapPoint mp : biggerPoints) {
 					float minMpX = mp.x - 0.04f;
