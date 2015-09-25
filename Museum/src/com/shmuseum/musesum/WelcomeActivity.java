@@ -32,18 +32,14 @@ public class WelcomeActivity extends Activity {
 		mFadeOut.setAnimationListener(new AnimationListener() {
 
 			@Override
-			public void onAnimationStart(Animation animation) {
-
-			}
+			public void onAnimationStart(Animation animation) {}
 
 			@Override
-			public void onAnimationRepeat(Animation animation) {
-
-			}
+			public void onAnimationRepeat(Animation animation) {}
 
 			@Override
 			public void onAnimationEnd(Animation animation) {
-				Intent intent = new Intent(mContext, IntroPageActivity.class);
+				Intent intent = new Intent(mContext, IndexActivity.class);
 				startActivity(intent);
 				WelcomeActivity.this.finish();
 			}
