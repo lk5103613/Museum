@@ -199,6 +199,15 @@ public class GuideFragment extends Fragment implements View.OnClickListener {
 		photoPoints.add(mp6);
 		photoPoints.add(mp7);
 		photoPoints.add(mp8);
+		photoPoints.add(mp9);
+		photoPoints.add(mp10);
+		photoPoints.add(mp11);
+		photoPoints.add(mp12);
+		photoPoints.add(mp13);
+		photoPoints.add(mp14);
+		photoPoints.add(mp15);
+		photoPoints.add(mp16);
+		photoPoints.add(mp17);
 
 		int i = 1;
 		for (MapPoint mp : photoPoints) {

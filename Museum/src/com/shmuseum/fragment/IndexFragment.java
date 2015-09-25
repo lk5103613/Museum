@@ -17,7 +17,7 @@ import android.widget.ImageView;
 import com.shmuseum.musesum.R;
 
 public class IndexFragment extends Fragment {
-	
+
 	private ImageView mIndexImg;
 	private ImageView mLevel1;
 	private ImageView mLevel2;
@@ -28,7 +28,7 @@ public class IndexFragment extends Fragment {
 	private IPagerListener mListener;
 	private Handler mHandler;
 	private int mAnimDuration = 1000;
-	
+
 	private Animation mLevelAnim;
 	private Animation mLevelAnim2;
 	private Animation mLevelAnim3;
@@ -38,11 +38,34 @@ public class IndexFragment extends Fragment {
 	private ImageView[] mLevels;
 	private Animation[] mAnims;
 	private int mCurrentLevel = 0;
-	
+
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
+		System.out.println("create view");
 		View view = inflater.inflate(R.layout.fragment_index, container, false);
+		mLevel1 = (ImageView) view.findViewById(R.id.level1);
+		mLevel2 = (ImageView) view.findViewById(R.id.level2);
+		mLevel3 = (ImageView) view.findViewById(R.id.level3);
+		mLevel4 = (ImageView) view.findViewById(R.id.level4);
+		mLevels = new ImageView[] { mLevel4, mLevel3, mLevel2, mLevel1 };
+		mStepText = (ImageView) view.findViewById(R.id.step_4_text);
+		mTextDes = (ImageView) view.findViewById(R.id.text_des);
+		mTextIn = AnimationUtils.loadAnimation(getActivity(),
+				R.anim.text_move_in);
+		mTextDesAnim = AnimationUtils.loadAnimation(getActivity(),
+				R.anim.des_move_in);
+		mLevelAnim = AnimationUtils.loadAnimation(getActivity(),
+				R.anim.level_in);
+		mLevelAnim2 = AnimationUtils.loadAnimation(getActivity(),
+				R.anim.level_in);
+		mLevelAnim3 = AnimationUtils.loadAnimation(getActivity(),
+				R.anim.level_in);
+		mLevelAnim4 = AnimationUtils.loadAnimation(getActivity(),
+				R.anim.level_in);
+		mAnims = new Animation[] { mLevelAnim, mLevelAnim2, mLevelAnim3,
+				mLevelAnim4 };
+		mLevelAnim.setFillAfter(true);
 		mHandler = new Handler(new Callback() {
 			@Override
 			public boolean handleMessage(Message msg) {
@@ -51,37 +74,6 @@ public class IndexFragment extends Fragment {
 				return false;
 			}
 		});
-		mLevel1 = (ImageView) view.findViewById(R.id.level1);
-		mLevel2 = (ImageView) view.findViewById(R.id.level2);
-		mLevel3 = (ImageView) view.findViewById(R.id.level3);
-		mLevel4 = (ImageView) view.findViewById(R.id.level4);
-		mLevels = new ImageView[]{mLevel4, mLevel3, mLevel2, mLevel1};
-		mTextIn = AnimationUtils.loadAnimation(getActivity(), R.anim.text_move_in);
-		mTextDesAnim = AnimationUtils.loadAnimation(getActivity(), R.anim.des_move_in);
-		mLevelAnim = AnimationUtils.loadAnimation(getActivity(), R.anim.level_in);
-		mLevelAnim2 = AnimationUtils.loadAnimation(getActivity(), R.anim.level_in);
-		mLevelAnim3 = AnimationUtils.loadAnimation(getActivity(), R.anim.level_in);
-		mLevelAnim4 = AnimationUtils.loadAnimation(getActivity(), R.anim.level_in);
-		mStepText = (ImageView) view.findViewById(R.id.step_4_text);
-		mTextDes = (ImageView) view.findViewById(R.id.text_des);
-		mAnims = new Animation[]{mLevelAnim, mLevelAnim2, mLevelAnim3, mLevelAnim4};
-		mLevelAnim.setFillAfter(true);
-		new Thread(new Runnable() {
-			@Override
-			public void run() {
-				while (mCurrentLevel < mLevels.length) {
-					mHandler.sendEmptyMessage(mCurrentLevel);
-					try {
-						Thread.sleep(800);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-					mCurrentLevel++;
-				}
-			}
-		}).start();
-		mStepText.startAnimation(mTextIn);
-		mTextDes.startAnimation(mTextDesAnim);
 		mLevel1.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -91,6 +83,28 @@ public class IndexFragment extends Fragment {
 		return view;
 	}
 	
+	@Override
+	public void onResume() {
+		super.onResume();
+		mCurrentLevel = 0;
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+				while (mCurrentLevel < mLevels.length) {
+					mHandler.sendEmptyMessage(mCurrentLevel);
+					try {
+						Thread.sleep(300);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+					mCurrentLevel++;
+				}
+			}
+		}).start();
+		mStepText.startAnimation(mTextIn);
+		mTextDes.startAnimation(mTextDesAnim);
+	}
+
 	@Override
 	public void onAttach(Activity activity) {
 		super.onAttach(activity);
