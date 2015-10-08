@@ -20,7 +20,7 @@ public class IndexActivity extends FragmentActivity implements IPagerListener {
 	private FragmentManager mFm;
 	public static final int FRAGMENT_GUIDE = 0;
 	public static final int FRAGMENT_RECOMMEND = FRAGMENT_GUIDE + 1;
-	private int mCurrentItem = 0;
+	private int mCurrentItem = 2;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -36,21 +36,21 @@ public class IndexActivity extends FragmentActivity implements IPagerListener {
 		myViewPager.setPageMargin(0);
 		setViewPagerScrollSpeed();
 		
+		myViewPager.setCurrentItem(2);
 	}
 
 	@Override
 	public void changePage() {
-		mCurrentItem++;
+		mCurrentItem--;
 		myViewPager.setCurrentItem(mCurrentItem);
-
 	}
 
 	@Override
 	public void onBackPressed() {
-		if(mCurrentItem == 0) 
+		if(mCurrentItem == 2) 
 			finish();
 		else {
-			mCurrentItem--;
+			mCurrentItem++;
 			myViewPager.setCurrentItem(mCurrentItem);
 		}
 	}

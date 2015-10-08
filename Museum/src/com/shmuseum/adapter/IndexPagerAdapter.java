@@ -14,7 +14,7 @@ public class IndexPagerAdapter extends FragmentStatePagerAdapter{
 	private GuideFragment mGuideFragment = new GuideFragment();
 	private RecommendPathFragment mRecommendPathFragment = new RecommendPathFragment();
 	
-	private Fragment[] mFragments = new Fragment[]{mIndex1, mGuideFragment,mRecommendPathFragment};
+	private Fragment[] mFragments = new Fragment[]{mRecommendPathFragment,mGuideFragment,mIndex1};
 	
 	public IndexPagerAdapter(FragmentManager fm) {
 		super(fm);
