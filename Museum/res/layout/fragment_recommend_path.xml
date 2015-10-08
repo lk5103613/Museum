@@ -17,7 +17,7 @@
             android:layout_marginTop="60dp"
             android:adjustViewBounds="true"
             android:background="#f9f8f3"
-            android:src="@drawable/map3" />
+            android:src="@drawable/map3_compress" />
 
         <android.support.v4.view.ViewPager
             android:id="@+id/sliding_view_pager"

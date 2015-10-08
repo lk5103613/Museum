@@ -97,7 +97,6 @@ public class RecommendPathFragment extends Fragment {
 		doteView.setOnPhotoTapListener(new PhotoViewAttacher.OnPhotoTapListener() {
 			@Override
 			public void onPhotoTap(View view, float x, float y) {
-				System.out.println("tap " + x + " " + y);
 				int i = 0;
 				for (MapPoint mp : photoPoints) {
 					float minMpX = mp.x - 0.04f;
@@ -204,13 +203,6 @@ public class RecommendPathFragment extends Fragment {
 		}
 	}
 
-	private void setCacheBitmap() {
-		doteView.setDrawingCacheEnabled(true);
-		bmp = doteView.getDrawingCache();
-		doteView.setImageBitmap(bmp);
-		doteView.setZoomable(true);
-	}
-
 	private void initDrawAnimation() {
 		valueAnimator = ValueAnimator.ofInt(0, 27);
 		valueAnimator.setTarget(doteView);
@@ -261,6 +253,9 @@ public class RecommendPathFragment extends Fragment {
 	}
 
 	private void drawPath(int index) {
+		if (doteView == null) {
+			return;
+		}
 
 		switch (index) {
 		case 0:
@@ -359,6 +354,14 @@ public class RecommendPathFragment extends Fragment {
 		}
 	}
 
+	@Override
+	public void onDestroy() {
+		doteView.destroyDrawingCache();
+		doteView = null;
+		bmp = null;
+		
+		super.onDestroy();
+	}
 	public void back(View v) {
 	}
 }

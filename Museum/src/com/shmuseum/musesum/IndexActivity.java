@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
-import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.animation.LinearInterpolator;
 
 import com.shmuseum.adapter.IndexPagerAdapter;
@@ -80,6 +79,13 @@ public class IndexActivity extends FragmentActivity implements IPagerListener {
 		} catch (IllegalAccessException e) {
 
 		}
+	}
+	
+	@Override
+	protected void onDestroy() {
+		mAdapter.destory();
+		myViewPager.destroyDrawingCache();
+		super.onDestroy();
 	}
 
 }

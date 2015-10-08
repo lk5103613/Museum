@@ -4,23 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 import uk.co.senab.photoview.PhotoViewAttacher;
-import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
-import android.support.v4.widget.SimpleCursorAdapter.ViewBinder;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.RelativeLayout.LayoutParams;
+import android.widget.TextView;
 
 import com.nineoldandroids.animation.ObjectAnimator;
 import com.shmuseum.customeview.DoteView;
@@ -31,9 +27,6 @@ import com.shmuseum.musesum.R;
 import com.shmuseum.musesum.ShowDetailActivity;
 import com.shmuseum.musesum.SittingRoomActivity;
 import com.shmuseum.musesum.StudyRoomActivity;
-import com.shmuseum.musesum.R.drawable;
-import com.shmuseum.musesum.R.id;
-import com.shmuseum.musesum.R.layout;
 import com.shmuseum.utils.DensityUtil;
 
 public class GuideFragment extends Fragment implements View.OnClickListener {
@@ -48,7 +41,6 @@ public class GuideFragment extends Fragment implements View.OnClickListener {
 
 	private Context mContext;
 	private Boolean mIsBottomShow = false;
-	private Boolean mNeedEnterAnimation = false;
 	private List<MapPoint> markers;
 	private List<MapPoint> photoPoints;
 	private Handler mHandler;
@@ -64,7 +56,6 @@ public class GuideFragment extends Fragment implements View.OnClickListener {
 	private TextView mShowPath;
 
 	private DoteView doteView;
-	private Bitmap bmp;
 	private IPagerListener mPagerListener;
 	
 	@Override
@@ -85,7 +76,7 @@ public class GuideFragment extends Fragment implements View.OnClickListener {
 		doteView = (DoteView) view.findViewById(R.id.dote_view_1);
 		doteView.setMarkerResourceId(R.drawable.marker2);
 		doteView.setRedMarkerResourceId(R.drawable.marker2_selected);
-		doteView.setVisibility(View.INVISIBLE);
+//		doteView.setVisibility(View.INVISIBLE);
 		mBtnShowBottom = (TextView) view.findViewById(R.id.btn_show_bottom);
 		mMenuTea = (LinearLayout) view.findViewById(R.id.menu_tea);
 		mShowPath = (TextView) view.findViewById(R.id.show_path);
@@ -166,6 +157,7 @@ public class GuideFragment extends Fragment implements View.OnClickListener {
 		return view;
 	}
 
+	
 	public void drawMarkers() {
 		markers = new ArrayList<>();
 		photoPoints = new ArrayList<>();
@@ -213,15 +205,15 @@ public class GuideFragment extends Fragment implements View.OnClickListener {
 	}
 
 	private void setCacheBitmap() {
-		doteView.setDrawingCacheEnabled(true);
-		bmp = doteView.getDrawingCache();
-		doteView.setImageBitmap(bmp);
+		doteView.buildDrawingCache();  //启用DrawingCache并创建位图  
+		Bitmap bitmap = Bitmap.createBitmap(doteView.getDrawingCache()); //创建一个DrawingCache的拷贝，因为DrawingCache得到的位图在禁用后会被回收  
+		doteView.setImageBitmap(bitmap);
 		doteView.setZoomable(true);
+		doteView.setDrawingCacheEnabled(false);  //禁用DrawingCahce否则会影
 	}
 
 	@Override
 	public void onClick(View v) {
-		mNeedEnterAnimation = true;
 		Intent intent = new Intent(mContext, ShowDetailActivity.class);
 		switch (v.getId()) {
 		case R.id.btn_show_bottom:
@@ -250,18 +242,26 @@ public class GuideFragment extends Fragment implements View.OnClickListener {
 			startActivity(intent);
 			break;
 		case R.id.show_path:
-//			intent = new Intent(mContext, RecommendPathFragment.class);
-//			startActivity(intent);
 			mPagerListener.changePage(IndexActivity.FRAGMENT_RECOMMEND);
 			break;
 		default:
 			break;
 		}
-		
-
 	}
 	
+	@Override
+	public void onResume() {
+		
+		super.onResume();
+	}
 	
-	
+	@Override
+	public void onDestroy() {
+		System.out.println("destory");
+		doteView.destroyDrawingCache();
+		doteView = null;
+		
+		super.onDestroy();
+	}
 
 }
