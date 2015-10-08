@@ -20,6 +20,7 @@ public class IndexActivity extends FragmentActivity implements IPagerListener {
 	private FragmentManager mFm;
 	public static final int FRAGMENT_GUIDE = 0;
 	public static final int FRAGMENT_RECOMMEND = FRAGMENT_GUIDE + 1;
+	private int mCurrentItem = 0;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -38,25 +39,19 @@ public class IndexActivity extends FragmentActivity implements IPagerListener {
 	}
 
 	@Override
-	public void changePage(int index) {
-		myViewPager.setCurrentItem(index);
+	public void changePage() {
+		mCurrentItem++;
+		myViewPager.setCurrentItem(mCurrentItem);
 
 	}
 
 	@Override
 	public void onBackPressed() {
-		// super.onBackPressed();
-		switch (myViewPager.getCurrentItem()) {
-		case FRAGMENT_GUIDE:
+		if(mCurrentItem == 0) 
 			finish();
-			break;
-		case FRAGMENT_RECOMMEND:
-			myViewPager.setCurrentItem(FRAGMENT_GUIDE);
-			break;
-
-		default:
-			this.finish();
-			break;
+		else {
+			mCurrentItem--;
+			myViewPager.setCurrentItem(mCurrentItem);
 		}
 	}
 
@@ -72,13 +67,9 @@ public class IndexActivity extends FragmentActivity implements IPagerListener {
 			FixedSpeedScroller scroller = new FixedSpeedScroller(
 					myViewPager.getContext(), new LinearInterpolator());
 			mScroller.set(myViewPager, scroller);
-		} catch (NoSuchFieldException e) {
+		} catch (Exception e) {
 
-		} catch (IllegalArgumentException e) {
-
-		} catch (IllegalAccessException e) {
-
-		}
+		}	
 	}
 	
 	@Override

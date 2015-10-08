@@ -2,19 +2,19 @@ package com.shmuseum.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.view.ViewGroup;
+import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.shmuseum.fragment.GuideFragment;
+import com.shmuseum.fragment.IndexFragment;
 import com.shmuseum.fragment.RecommendPathFragment;
 
-public class IndexPagerAdapter extends FragmentPagerAdapter{
+public class IndexPagerAdapter extends FragmentStatePagerAdapter{
 
+	private IndexFragment mIndex1 = new IndexFragment();
 	private GuideFragment mGuideFragment = new GuideFragment();
 	private RecommendPathFragment mRecommendPathFragment = new RecommendPathFragment();
 	
-	private Fragment[] mFragments = new Fragment[]{mGuideFragment,mRecommendPathFragment};
-
+	private Fragment[] mFragments = new Fragment[]{mIndex1, mGuideFragment,mRecommendPathFragment};
 	
 	public IndexPagerAdapter(FragmentManager fm) {
 		super(fm);
@@ -28,15 +28,6 @@ public class IndexPagerAdapter extends FragmentPagerAdapter{
 	@Override
 	public int getCount() {
 		return mFragments.length;
-	}
-	
-	public void destory(){
-		System.out.println("adapter destory");
-		((ViewGroup)mGuideFragment.getView()).removeAllViews();
-		((ViewGroup)mRecommendPathFragment.getView()).removeAllViews();
-		mFragments = null;
-		mGuideFragment = null;
-		mRecommendPathFragment = null;
 	}
 
 }

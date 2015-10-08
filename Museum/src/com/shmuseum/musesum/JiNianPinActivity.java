@@ -75,7 +75,7 @@ public class JiNianPinActivity extends Activity {
      * 初始化数据
      */
     private void initDataSource(){
-        goods = new ArrayList<>();
+        goods = new ArrayList<GoodInfo>();
         goods.add(new GoodInfo(R.drawable.img_good, "桌旗八吉祥", "    古时有个秀才，几步成诗，诗才可比曹植。一天，秀才在西湖边赏景时，看到对面一位婀娜多姿的姑娘款款而来。秀才诗兴大发，吟诗两句：“远见一姑娘，金莲三寸长”。姑娘心中暗喜，秀才如此赞美我。但是且慢，请往下听第三第四句：“为何这般短——横量”     ", "Լ240x34cm", "人民币750元"));
         goods.add(new GoodInfo(R.drawable.img_good, "桌旗八吉祥", "    古时有个秀才，几步成诗，诗才可比曹植。一天，秀才在西湖边赏景时，看到对面一位婀娜多姿的姑娘款款而来。秀才诗兴大发，吟诗两句：“远见一姑娘，金莲三寸长”。姑娘心中暗喜，秀才如此赞美我。但是且慢，请往下听第三第四句：“为何这般短——横量”     ", "Լ240x34cm", "人民币750元"));
         goods.add(new GoodInfo(R.drawable.img_good, "桌旗八吉祥", "    古时有个秀才，几步成诗，诗才可比曹植。一天，秀才在西湖边赏景时，看到对面一位婀娜多姿的姑娘款款而来。秀才诗兴大发，吟诗两句：“远见一姑娘，金莲三寸长”。姑娘心中暗喜，秀才如此赞美我。但是且慢，请往下听第三第四句：“为何这般短——横量”     ", "Լ240x34cm", "人民币750元"));

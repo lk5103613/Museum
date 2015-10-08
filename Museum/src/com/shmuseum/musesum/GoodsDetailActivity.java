@@ -97,7 +97,7 @@ public class GoodsDetailActivity extends Activity {
     }
 
     private void initBgImgs(Goods goods) {
-        List<String> pics = new ArrayList<>();
+        List<String> pics = new ArrayList<String>();
         if(!goods.pic0.equals(""))
             pics.add(APIS.BASE_URL + goods.pic0);
         if(!goods.pic1.equals(""))
@@ -152,7 +152,7 @@ public class GoodsDetailActivity extends Activity {
             img.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    int index = (int) v.getTag();
+                    int index =  Integer.valueOf(v.getTag().toString());
                     if (index == 1) {
                         Intent intent = new Intent(mContext, GoodsDescriptionActivity.class);
                         intent.putExtra("bitmap", getBlur(getContainerImage()));

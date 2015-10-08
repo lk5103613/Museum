@@ -115,7 +115,7 @@ public class StudyRoomActivity extends Activity {
     }
 
     private void initIcon() {
-        mIconPercents = new ArrayList<>();
+        mIconPercents = new ArrayList<MapPoint>();
         MapPoint mp1 = new MapPoint(0.09058713f, 0.57838346f);
         MapPoint mp2 = new MapPoint(0.32319696f, 0.66804344f);
         MapPoint mp3 = new MapPoint(0.50900386f, 0.118076684f);
@@ -126,7 +126,7 @@ public class StudyRoomActivity extends Activity {
         mIconPercents.add(mp3);
         mIconPercents.add(mp4);
         mIconPercents.add(mp5);
-        mIcons = new ArrayList<>();
+        mIcons = new ArrayList<MapPoint>();
         for(int i=0; i<mIconPercents.size(); i++) {
             MapPoint mp = new MapPoint(mDoteView.canvasWidth * mIconPercents.get(i).x,
                     mDoteView.canvasHeight * mIconPercents.get(i).y, 1 + i);
@@ -142,7 +142,7 @@ public class StudyRoomActivity extends Activity {
     }
 
     private void initItemView(List<ItemEntity> entities) {
-        views = new ArrayList<>();
+        views = new ArrayList<View>();
         for(ItemEntity entity : entities) {
             View view = mInflater.inflate(R.layout.sliding_item, null);
             ImageView img = (ImageView) view.findViewById(R.id.item_img);

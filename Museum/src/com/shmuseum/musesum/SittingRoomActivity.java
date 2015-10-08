@@ -115,7 +115,7 @@ public class SittingRoomActivity extends Activity {
     }
 
     private void initIcon() {
-        mIconPercents = new ArrayList<>();
+        mIconPercents = new ArrayList<MapPoint>();
         MapPoint mp1 = new MapPoint(0.250871f, 0.58011604f);
         MapPoint mp2 = new MapPoint(0.2658025f, 0.85101276f);
         MapPoint mp3 = new MapPoint(0.52831808f, 0.48896546f);
@@ -128,7 +128,7 @@ public class SittingRoomActivity extends Activity {
         mIconPercents.add(mp4);
         mIconPercents.add(mp5);
         mIconPercents.add(mp6);
-        mIcons = new ArrayList<>();
+        mIcons = new ArrayList<MapPoint>();
         for(int i=0; i<mIconPercents.size(); i++) {
             MapPoint mp = new MapPoint(mDoteView.canvasWidth * mIconPercents.get(i).x,
                     mDoteView.canvasHeight * mIconPercents.get(i).y, 1 + i);
@@ -144,7 +144,7 @@ public class SittingRoomActivity extends Activity {
     }
 
     private void initItemView(List<ItemEntity> entities) {
-        views = new ArrayList<>();
+        views = new ArrayList<View>();
         for(ItemEntity entity : entities) {
             View view = mInflater.inflate(R.layout.sliding_item, null);
             ImageView img = (ImageView) view.findViewById(R.id.item_img);

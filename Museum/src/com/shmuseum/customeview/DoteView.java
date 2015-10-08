@@ -46,7 +46,6 @@ public class DoteView extends PhotoView {
     // 小人高
     private int MARKER_HEIGHT = 22;
 
-
 	private Paint mPaint;
 	private Path mPath;
 
@@ -70,12 +69,12 @@ public class DoteView extends PhotoView {
 
 	private Handler mHandler;
 
-	List<RectF> rectFs = new ArrayList<>();
-	List<Integer> beginAngs = new ArrayList<>();
-	List<Integer> sweepAngs = new ArrayList<>();
+	List<RectF> rectFs = new ArrayList<RectF>();
+	List<Integer> beginAngs = new ArrayList<Integer>();
+	List<Integer> sweepAngs = new ArrayList<Integer>();
 
-	List<MapPoint> markers = new ArrayList<>();
-	List<MapPoint> biggerPoint = new ArrayList<>();
+	List<MapPoint> markers = new ArrayList<MapPoint>();
+	List<MapPoint> biggerPoint = new ArrayList<MapPoint>();
 	
 	private Bitmap markerBitmap;
 	private Bitmap redMarkerBitmap;

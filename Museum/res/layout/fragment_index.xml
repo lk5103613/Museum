@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.shmuseum.customeview.FoldingLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/index_bg" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true" >
+
+            <ImageView
+                android:id="@+id/level4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:paddingLeft="54dp"
+                android:paddingRight="54dp"
+                android:visibility="invisible"
+                android:adjustViewBounds="true"
+                android:src="@drawable/level4" />
+
+            <ImageView
+                android:id="@+id/level3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/level4"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="-60dp"
+                android:paddingLeft="43dp"
+                android:paddingRight="43dp"
+                android:visibility="invisible"
+                android:adjustViewBounds="true"
+                android:src="@drawable/level3" />
+
+            <ImageView
+                android:id="@+id/level2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/level3"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="-60dp"
+                android:adjustViewBounds="true"
+                android:paddingLeft="42dp"
+                android:paddingRight="42dp"
+                android:visibility="invisible"
+                android:src="@drawable/level2" />
+
+            <ImageView
+                android:id="@+id/level1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/level2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="-69dp"
+                android:adjustViewBounds="true"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp"
+                android:visibility="invisible"
+                android:src="@drawable/level1" />
+
+            <ImageView
+                android:id="@+id/step_4_text"
+                android:layout_width="19dp"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/level1"
+                android:layout_marginBottom="100dp"
+                android:layout_marginLeft="34dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/step_4_text" />
+
+            <ImageView
+                android:id="@+id/text_des"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/level1"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="10dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/text_des" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</com.shmuseum.customeview.FoldingLayout>
