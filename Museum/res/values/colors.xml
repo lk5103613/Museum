@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="white">#ffffff</color>
-    <color name="sliding_item_bg_color">#f3f3f3</color>
+    <color name="sliding_item_bg_color">#e0f3f3f3</color>
     <color name="details_text_color">#d82721</color>
     <color name="favorite_text_color">#a1a1a1</color>
     <color name="name_text_color">#010101</color>

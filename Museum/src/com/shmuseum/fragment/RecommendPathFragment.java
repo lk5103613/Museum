@@ -16,6 +16,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
@@ -236,14 +237,37 @@ public class RecommendPathFragment extends Fragment {
 			ImageView img = (ImageView) view.findViewById(R.id.item_img);
 			TextView txtName = (TextView) view.findViewById(R.id.item_name);
 			TextView txtFavorite = (TextView) view.findViewById(R.id.item_fav);
+			ImageView btnLeft = (ImageView) view.findViewById(R.id.btn_left);
+			ImageView btnRight = (ImageView) view.findViewById(R.id.btn_right);
+			btnLeft.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					if (mSlidingPager.getCurrentItem()-1 >=0) {
+						mSlidingPager.setCurrentItem(mSlidingPager.getCurrentItem()-1);
+					}
+					
+				}
+			});
+			
+			btnRight.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					if (mSlidingPager.getCurrentItem()+1 < mSlidingPager.getChildCount()) {
+						mSlidingPager.setCurrentItem(mSlidingPager.getCurrentItem()+1);
+					}
+					
+				}
+			});
+			
 			txtName.setText(entity.name);
-			txtFavorite.setText("宸叉湁" + entity.zan_cnt + "浜虹偣璧�");
+			txtFavorite.setText("已有" + entity.zan_cnt + "人点赞");
 			String iconUrl = APIS.BASE_URL + entity.icon;
 			MyNetworkUtil
 					.getInstance(mContext)
 					.getImageLoader()
-					.get(iconUrl,
-							ImageLoader.getImageListener(img, R.color.white,
+					.get(iconUrl,ImageLoader.getImageListener(img, R.color.white,
 									R.color.white));
 			views.add(view);
 		}
