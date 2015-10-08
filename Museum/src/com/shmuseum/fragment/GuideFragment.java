@@ -233,8 +233,8 @@ public class GuideFragment extends Fragment implements View.OnClickListener {
 
 	public void drawBiggers() {
 		biggerPoints = new ArrayList<MapPoint>();
-		MapPoint mp1 = new MapPoint(0.5589668f, 0.12810344f);
-		MapPoint mp2 = new MapPoint(0.5051194f, 0.54216376f);
+		MapPoint mp1 = new MapPoint(0.5589668f, 0.12310344f);
+		MapPoint mp2 = new MapPoint(0.5051194f, 0.53516376f);
 		biggerPoints.add(mp1);
 		biggerPoints.add(mp2);
 		biggers = new ArrayList<MapPoint>();

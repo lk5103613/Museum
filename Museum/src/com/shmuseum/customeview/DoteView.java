@@ -35,9 +35,9 @@ public class DoteView extends PhotoView {
 	public static final float DEFAULT_SCALE = 1.5f;
 
     // 放大镜宽
-    private int BIGGER_WIDTH = 25;
+    private int BIGGER_WIDTH = 20;
     // 放大镜高
-    private int BIGGER_HEIGHT = 25;
+    private int BIGGER_HEIGHT = 20;
 
     // 小人宽
     private int MARKER_WIDTH = 20;
@@ -182,7 +182,7 @@ public class DoteView extends PhotoView {
 		dst.bottom = y + h;
 		// 画出指定的位图，位图将自动--》缩放/自动转换，以填补目标矩形
 		// 这个方法的意思就像 将一个位图按照需求重画一遍，画后的位图就是我们需要的了
-		canvas.drawBitmap(blt, null, dst, null);
+		canvas.drawBitmap(blt, null, dst, mPaint);
 		src = null;
 		dst = null;
 	}
