@@ -10,11 +10,9 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.DashPathEffect;
 import android.graphics.Paint;
 import android.graphics.Paint.Style;
 import android.graphics.Path;
-import android.graphics.PathEffect;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.os.Handler;
@@ -120,8 +118,9 @@ public class DoteView extends PhotoView {
 
 			mPath.moveTo(x, y);
 
-			PathEffect pe = new DashPathEffect(new float[] { 8f, 8f }, phase);
-			mPaint.setPathEffect(pe);
+			//虚线
+//			PathEffect pe = new DashPathEffect(new float[] { 8f, 8f }, phase);
+//			mPaint.setPathEffect(pe);
 		}
 
 		Bitmap canBitmap = Bitmap.createBitmap((int) getWidth(), (int) imgHeight,
@@ -195,15 +194,15 @@ public class DoteView extends PhotoView {
 		setMinimumScale(MIN_SCALE);
 
 		mHandler = new Handler();
-		mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+		mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);//抗锯齿
 		mPaint.setStyle(Style.STROKE);
 		mPaint.setStrokeWidth(2);
-		mPaint.setColor(Color.GRAY);
+		mPaint.setColor(getResources().getColor(R.color.line_color));
 		mPath = new Path();
 
 		arrowPath = new Path();
 		arrowPaint = new Paint();
-		arrowPaint.setColor(Color.GRAY);
+		arrowPaint.setColor(Color.BLACK);
 		arrowPaint.setStyle(Style.FILL);
 		arrowPaint.setStrokeWidth(2);
 

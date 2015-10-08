@@ -12,6 +12,7 @@
     <color name="like_text_color">#ff5500</color>
     <color name="intro_text">#EAD9A1</color>
     <color name="jinian_bg">#e0CBCBCB</color>
+    <color name="line_color">#D98749</color>
 
     <color name="goods_detail_sm_icon_text_color">#C9BB94</color>
 </resources>

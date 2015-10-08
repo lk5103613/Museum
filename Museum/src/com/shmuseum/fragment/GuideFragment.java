@@ -76,8 +76,8 @@ public class GuideFragment extends Fragment implements View.OnClickListener {
 
 		mSlideView = (LinearLayout) view.findViewById(R.id.slide_up_menu);
 		doteView = (DoteView) view.findViewById(R.id.dote_view_1);
-		doteView.setMarkerResourceId(R.drawable.marker2);
-		doteView.setRedMarkerResourceId(R.drawable.marker2_selected);
+		doteView.setMarkerResourceId(R.drawable.marker);
+		doteView.setRedMarkerResourceId(R.drawable.marker_selected);
 		doteView.setVisibility(View.INVISIBLE);
 		mBtnShowBottom = (TextView) view.findViewById(R.id.btn_show_bottom);
 		mMenuTea = (LinearLayout) view.findViewById(R.id.menu_tea);

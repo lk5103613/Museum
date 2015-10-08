@@ -74,7 +74,6 @@ public class IndexActivity extends FragmentActivity implements IPagerListener {
 	
 	@Override
 	protected void onDestroy() {
-		mAdapter.destory();
 		myViewPager.destroyDrawingCache();
 		super.onDestroy();
 	}

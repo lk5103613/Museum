@@ -93,8 +93,8 @@ public class RecommendPathFragment extends Fragment {
 		mInflater = LayoutInflater.from(mContext);
 		doteView = (DoteView) view.findViewById(R.id.dote_view);
 		doteView.setVisibility(View.INVISIBLE);
-		doteView.setMarkerResourceId(R.drawable.marker2);
-		doteView.setRedMarkerResourceId(R.drawable.marker2_selected);
+		doteView.setMarkerResourceId(R.drawable.marker);
+		doteView.setRedMarkerResourceId(R.drawable.marker_selected);
 		doteView.setOnPhotoTapListener(new PhotoViewAttacher.OnPhotoTapListener() {
 			@Override
 			public void onPhotoTap(View view, float x, float y) {
@@ -357,8 +357,11 @@ public class RecommendPathFragment extends Fragment {
 			doteView.addLine(0, doteView.imgHeight * 0.015f, false);
 			break;
 		case 12:
-			doteView.addCircle(175, 100, doteView.imgWidth * 0.04f,
-					doteView.imgHeight * 0.016f);
+			/*doteView.addCircle(160, 100, doteView.imgWidth * 0.04f,
+					doteView.imgHeight * 0.016f);*/
+			
+			doteView.addLine(-doteView.imgWidth * 0.036f, doteView.imgHeight * 0.016f, false);
+			
 			break;
 		case 13:
 			doteView.addLine(-doteView.imgWidth * 0.24f, 0, true);

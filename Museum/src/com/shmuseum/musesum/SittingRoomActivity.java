@@ -54,8 +54,8 @@ public class SittingRoomActivity extends Activity {
         mSlidingPager.setPageMargin(30);
         mSlidingPager.setOffscreenPageLimit(3);
         mDoteView = (DoteView) findViewById(R.id.study_room_map);
-        mDoteView.setMarkerResourceId(R.drawable.marker2);
-        mDoteView.setRedMarkerResourceId(R.drawable.marker2_selected);
+        mDoteView.setMarkerResourceId(R.drawable.marker);
+        mDoteView.setRedMarkerResourceId(R.drawable.marker_selected);
 
         mSlidingPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
