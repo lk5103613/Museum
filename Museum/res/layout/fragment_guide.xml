@@ -2,7 +2,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent" 
+    android:background="@drawable/index_bg">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -79,7 +80,6 @@
             android:layout_below="@id/toolbar"
             android:layout_centerHorizontal="true"
             android:adjustViewBounds="true"
-            android:background="#f9f8f3"
             android:src="@drawable/map3" />
 
         <LinearLayout
